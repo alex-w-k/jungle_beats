@@ -4,6 +4,7 @@ require 'minitest/pride'
 require_relative './node'
 
 class NodeTest < Minitest::Test
+
   def test_create_node 
     node = Node.new("plop")
     assert_equal node.data, "plop"

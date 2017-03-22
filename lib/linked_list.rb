@@ -1,3 +1,4 @@
+require 'pry'
 require './lib/node'
 
 class LinkedList
@@ -13,7 +14,8 @@ class LinkedList
     if @head == nil
       @head = @node
     else
-      @head.next_node = @node
+      head.tail.next_node = @node
+      head.tail.data
     end
 
     @node.data
@@ -24,22 +26,27 @@ class LinkedList
   end
 
   def count
-    if @head == nil
-      0
-    elsif @head.next_node == nil
-      1
-    elsif @head.next_node.next_node == nil
-      2
+    counter = 0
+    traverser = @head
+    until traverser.nil?
+      counter += 1
+      traverser = traverser.next_node
     end
+    counter
   end
 
   def to_string
-    if @head.next_node == nil
-     string = @head.data
-    else
-      string = @head.data + " " + @head.next_node.data
+    string = ""
+    string << @head.data
+    traverser = @head.next_node
+    until traverser.nil?
+      string << " " + traverser.data
+      traverser = traverser.next_node
     end
+
+    string
 
   end
 
+  binding.pry
 end

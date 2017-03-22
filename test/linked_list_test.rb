@@ -58,4 +58,15 @@ class LinkedListTest < Minitest::Test
     assert_equal "doop deep", list.to_string
   end
 
+  def test_create_store_and_list_three_nodes
+    list = LinkedList.new
+    list.append("doop")
+    assert_equal 1, list.count
+    list.append("deep")
+    assert_equal 2, list.count
+    list.append("ditt")
+    assert_equal 3, list.count
+    assert_equal "doop deep ditt", list.to_string
+  end
+
 end
