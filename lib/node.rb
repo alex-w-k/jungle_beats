@@ -2,9 +2,9 @@ class Node
 
   attr_accessor :data, :next_node, :tail
   
-  def initialize(value)
+  def initialize(value, next_node=nil)
     @data = value
-    @next_node = nil
+    @next_node = next_node
   end
 
   def tail

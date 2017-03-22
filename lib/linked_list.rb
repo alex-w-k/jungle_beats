@@ -1,4 +1,3 @@
-require 'pry'
 require './lib/node'
 
 class LinkedList
@@ -21,13 +20,18 @@ class LinkedList
     @node.data
   end
 
+  def prepend(data)
+    temp = Node.new(data, @head)
+    @head = temp
+  end
+
   def next_node
-    next_node = @node.next_node
+    next_node = node.next_node
   end
 
   def count
     counter = 0
-    traverser = @head
+    traverser = head
     until traverser.nil?
       counter += 1
       traverser = traverser.next_node
@@ -43,10 +47,9 @@ class LinkedList
       string << " " + traverser.data
       traverser = traverser.next_node
     end
-
     string
-
   end
 
-  binding.pry
+
+
 end
