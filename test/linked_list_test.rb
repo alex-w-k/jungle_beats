@@ -8,6 +8,7 @@ class LinkedListTest < Minitest::Test
 
   def test_linked_list_init
     list = LinkedList.new
+    assert list
     assert_nil list.head
   end
 
@@ -116,5 +117,39 @@ class LinkedListTest < Minitest::Test
     refute list.includes?("dep")
   end
 
+  def test_pop_one
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal 5, list.count
+    assert_equal "blop", list.pop
+    assert_equal 4, list.count
+
+  end
+  def test_pop_two
+    list = LinkedList.new
+    list.append("doop")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    list.pop
+    assert_equal "shu", list.pop
+    assert_equal 3, list.count
+    assert_equal "doop woo shi", list.to_string
+  end
+
+  def test_go_to_node
+    list = LinkedList.new
+    list.append("doop")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal "doop", list.go_to_node(0).data
+  end
 
 end

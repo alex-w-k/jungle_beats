@@ -82,7 +82,23 @@ class LinkedList
     else
       false
     end
-    
+  end
+
+  def pop
+    number = self.count
+    deleted = head.tail.data
+    go_to_node(number - 2).next_node = nil
+    deleted
+  end
+
+  def go_to_node(pos)
+    index = 0
+    traverser = @head
+    until index == pos
+      traverser = traverser.next_node
+      index += 1
+    end
+    traverser
   end
 
 end
