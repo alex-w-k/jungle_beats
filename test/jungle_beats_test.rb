@@ -29,6 +29,19 @@ class JungleBeatsTest < Minitest::Test
     assert jb.play
   end
   
+  def test_prepend
+    jb = JungleBeat.new
+    assert_equal "deep doo ditt", jb.append("deep doo ditt")
+    assert_equal "doop woo hoo deep doo ditt", jb.prepend("doop woo hoo")
+  end
+
+  #def test_valid
+    #jb = JungleBeat.new
+    #jb.append("doop")
+    #jb.append("Mississippi")
+    #assert_equal "doop", jb.list
+  #end
+  
 
 end
 
