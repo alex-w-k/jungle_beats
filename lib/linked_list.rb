@@ -50,6 +50,39 @@ class LinkedList
     string
   end
 
+  def insert(pos, data)
+    current = @head
+    (pos - 1).times do
+      current = current.next_node
+    end
+    temp = Node.new(data, current.next_node)
+    current.next_node = temp
+  end
 
+  def find(pos, amount)
+    current = head
+    list = ""
+    pos.times do
+      current = current.next_node
+    end
+    amount.times do
+      if list == ""
+        list << current.data
+      else
+        list << " " + current.data
+      end
+      current = current.next_node
+    end
+    list
+  end
+
+  def includes?(string)
+    if to_string.include?(string)
+      true
+    else
+      false
+    end
+    
+  end
 
 end
