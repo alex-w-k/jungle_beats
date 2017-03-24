@@ -20,7 +20,7 @@ class JungleBeat
     list.count
   end
 
-  def play
+  def 🤑
     `say -r 500 -v Boing #{list.to_string}`
   end
   

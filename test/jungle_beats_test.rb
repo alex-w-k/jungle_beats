@@ -26,7 +26,7 @@ class JungleBeatsTest < Minitest::Test
   def test_play
     jb = JungleBeat.new
     jb.append("deep doo ditt woo hoo shu")
-    assert jb.play
+    assert jb.🤑
   end
   
   def test_prepend
