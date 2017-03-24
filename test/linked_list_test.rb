@@ -152,4 +152,11 @@ class LinkedListTest < Minitest::Test
     assert_equal "doop", list.go_to_node(0).data
   end
 
+  def test_test
+    list = LinkedList.new
+    list.append("doop")
+    assert_equal "doop", list.go_to_node(0).data
+  end
+
+
 end
